@@ -9,7 +9,6 @@ services:
       args: 
         - SYSTEM_USER_NAME=root
         - WORK_DIR=/root
-        - DTTM=$(date +%s)
     volumes:
       - dwld_data_sql_vol:/root/data
 
