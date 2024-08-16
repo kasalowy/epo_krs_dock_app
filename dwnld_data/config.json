@@ -1,0 +1,21 @@
+{
+    "search_config": {
+        "search_queries": {
+            "sq_1": {
+                "pd":["20210101", "20210330"],
+                "pa":"Comarch",
+                "binding_operator": "and"
+            },
+            "sq_2": {
+                "pa":"Orlen",
+                "binding_operator": ""
+            }
+        },
+        "range":"1-100"
+    },
+    "fulltxt_config": {},
+    "token":{
+        "epo_consumer_key": "",
+        "epo_consumer_secret_key": ""        
+    }
+}

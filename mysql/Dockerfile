@@ -1,0 +1,9 @@
+FROM mysql:latest
+
+# COPY data/ /var/lib/mysql-files/
+
+ARG MYSQL_ROOT_PASSWORD
+
+ENV MYSQL_ROOT_PASSWORD=${MYSQL_ROOT_PASSWORD}
+
+EXPOSE 3306

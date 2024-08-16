@@ -1,0 +1,33 @@
+version: '1.0'
+
+services:
+
+### Container used for downloading data
+  dwnld_data_py:
+    build: 
+      context: dwnld_data
+      args: 
+        - SYSTEM_USER_NAME=py_user
+        - WORK_DIR=/home/py_user
+    volumes:
+      - dwld_data_sql_vol:/home/py_user/data
+
+### MySQL container
+  mysql_epo:
+    build:
+      context: mysql
+      args:
+        - MYSQL_ROOT_PASSWORD=haselko5
+    ports:
+      - "3307:3306"
+    volumes:
+      - dwld_data_sql_vol:/var/lib/mysql-files
+
+volumes:
+  dwld_data_sql_vol:
+    external: false
+    driver: local
+    driver_opts:
+      type: none
+      device: ./volume_mount
+      o: bind 
