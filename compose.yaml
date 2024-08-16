@@ -7,17 +7,20 @@ services:
     build: 
       context: dwnld_data
       args: 
-        - SYSTEM_USER_NAME=py_user
-        - WORK_DIR=/home/py_user
+        - SYSTEM_USER_NAME=root
+        - WORK_DIR=/root
+        - DTTM=$(date +%s)
     volumes:
-      - dwld_data_sql_vol:/home/py_user/data
+      - dwld_data_sql_vol:/root/data
 
 ### MySQL container
   mysql_epo:
     build:
       context: mysql
       args:
-        - MYSQL_ROOT_PASSWORD=haselko5
+        - SYSTEM_USER_NAME=root
+        - WORK_DIR=/root
+        - MYSQL_ROOT_PASSWORD=123
     ports:
       - "3307:3306"
     volumes:

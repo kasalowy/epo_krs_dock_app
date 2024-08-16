@@ -210,4 +210,4 @@ for i in df["doc_number"]:
     
 df["full_txt_flg"] = full_txt_flg_list
 
-df.to_csv(f"data/search_results_{DTTM}.csv", sep=";", header=False, index=False)
+df.to_csv(f"data/search_results.csv", sep=";", header=False, index=False)
