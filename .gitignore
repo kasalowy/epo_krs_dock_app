@@ -1,0 +1,2 @@
+# ignore auth dir containing secrets
+dwnld_data/auth

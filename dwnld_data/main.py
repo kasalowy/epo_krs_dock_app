@@ -89,8 +89,14 @@ EPO_API_ENDPOINT_PUB="publication"
 EPO_API_SERVICE_BIB="biblio"
 EPO_API_SERVICE_FT="fulltext"
 
-EPO_CONSUMER_KEY=CFG_FILE["token"]["epo_consumer_key"]
-EPO_CONSUMER_SECRET_KEY=CFG_FILE["token"]["epo_consumer_secret_key"]
+# EPO_CONSUMER_KEY=CFG_FILE["token"]["epo_consumer_key"]
+# EPO_CONSUMER_SECRET_KEY=CFG_FILE["token"]["epo_consumer_secret_key"]
+
+with open ("auth/epo_consumer_key.txt", "r") as file:
+    EPO_CONSUMER_KEY=file.read()
+
+with open ("auth/epo_consumer_secret_key.txt", "r") as file:
+    EPO_CONSUMER_SECRET_KEY=file.read()
 
 EPO_API_TOKEN_URL=f"{EPO_API_BASE_URL}/{EPO_API_VER}/{EPO_API_TOKEN_URL_SUFIX}"
 EPO_API_SEARCH_URL=f"{EPO_API_BASE_URL}/{EPO_API_VER}/{EPO_API_PUB_DATA}/{EPO_API_ENDPOINT_S}/{EPO_API_SERVICE_BIB}"
