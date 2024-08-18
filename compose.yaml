@@ -1,7 +1,6 @@
 version: '1.0'
 
 services:
-
 ### Container used for downloading data
   dwnld_data_py:
     build: 
@@ -24,6 +23,9 @@ services:
       - "3307:3306"
     volumes:
       - dwld_data_sql_vol:/var/lib/mysql-files
+    depends_on:
+      dwnld_data_py:
+        condition: service_completed_successfully
 
 volumes:
   dwld_data_sql_vol:
